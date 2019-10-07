@@ -15,7 +15,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/skydive-project/goloxi"
+	"github.com/donNewtonAlpha/goloxi"
 )
 
 type OxmId struct {
@@ -1459,7 +1459,7 @@ func (self *BsnGenericStatsEntry) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -1595,7 +1595,7 @@ func (self *BsnGentableDescStatsEntry) Serialize(encoder *goloxi.Encoder) error 
 	encoder.PutUint32(uint32(self.MaxEntries))
 	encoder.Write(bytes.Repeat([]byte{0}, 4))
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -1695,7 +1695,7 @@ func (self *BsnGentableEntryDescStatsEntry) Serialize(encoder *goloxi.Encoder) e
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -1801,7 +1801,7 @@ func (self *BsnGentableEntryStatsEntry) Serialize(encoder *goloxi.Encoder) error
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -2206,7 +2206,7 @@ func (self *BsnPortCounterStatsEntry) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -10905,7 +10905,7 @@ func (self *BsnVlanCounterStatsEntry) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -11323,7 +11323,7 @@ func (self *BsnVrfCounterStatsEntry) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -11427,7 +11427,7 @@ func (self *Bucket) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -12378,7 +12378,7 @@ func (self *FlowStatsEntry) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -12486,7 +12486,7 @@ func (self *GroupDescStatsEntry) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -12625,7 +12625,7 @@ func (self *GroupStatsEntry) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -14135,7 +14135,7 @@ func (self *MeterConfig) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -14633,7 +14633,7 @@ func (self *NiciraFlowStats) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -14868,7 +14868,7 @@ func (self *NiciraFlowUpdateFullAdd) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -15032,7 +15032,7 @@ func (self *NiciraFlowUpdateFullDeleted) Serialize(encoder *goloxi.Encoder) erro
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -15196,7 +15196,7 @@ func (self *NiciraFlowUpdateFullModified) Serialize(encoder *goloxi.Encoder) err
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
@@ -32604,7 +32604,7 @@ func (self *TableFeatures) Serialize(encoder *goloxi.Encoder) error {
 		}
 	}
 
-	binary.BigEndian.PutUint16(encoder.Bytes()[0:2], uint16(len(encoder.Bytes())))
+	binary.BigEndian.PutUint16(encoder.Bytes()[2:4], uint16(len(encoder.Bytes())))
 
 	return nil
 }
