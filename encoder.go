@@ -25,7 +25,7 @@ func (e *Encoder) PutUint8(i uint8) {
 
 func (e *Encoder) PutUint16(i uint16) {
 	var tmp [2]byte
-	binary.BigEndian.PutUint16(tmp[2:4], i)
+	binary.BigEndian.PutUint16(tmp[0:2], i)
 	e.buffer.Write(tmp[:])
 }
 
