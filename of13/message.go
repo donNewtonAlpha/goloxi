@@ -9626,6 +9626,7 @@ func DecodePacketOut(parent *Header, decoder *goloxi.Decoder) (*PacketOut, error
 
 	for i := 0; i < int(_packetout.ActionsLen); i++ {
 		item, err := DecodeAction(decoder)
+		i += int(item.GetLen())
 		if err != nil {
 			return nil, err
 		}
